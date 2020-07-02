@@ -6266,6 +6266,22 @@ public final class Settings {
         private static final Validator ACCENT_COLOR_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         /**
+         * System-wide switch style
+         * 0 = Default
+         * 1 = OnePlus
+         * 2 = Narrow
+         * 3 = Contained
+         * 4 = Telegram
+         * 5 = Md2
+         * 6 = Retro
+         * @hide
+         */
+        public static final String SWITCH_STYLE = "switch_style";
+        /** @hide */
+        private static final Validator SWITCH_STYLE_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 6);
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6428,6 +6444,7 @@ public final class Settings {
             LOCKSCREEN_MAX_NOTIF_CONFIG,
             WIRELESS_CHARGING_ANIMATION,
             ACCENT_COLOR,
+            SWITCH_STYLE,
         };
 
         /**
@@ -6861,6 +6878,7 @@ public final class Settings {
             VALIDATORS.put(LOCKSCREEN_MAX_NOTIF_CONFIG, LOCKSCREEN_MAX_NOTIF_CONFIG_VALIDATOR);
             VALIDATORS.put(WIRELESS_CHARGING_ANIMATION, WIRELESS_CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(ACCENT_COLOR, ACCENT_COLOR_VALIDATOR);
+            VALIDATORS.put(SWITCH_STYLE, SWITCH_STYLE_VALIDATOR);
         }
 
         /**
